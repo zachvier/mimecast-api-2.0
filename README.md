@@ -1,6 +1,6 @@
 # Mimecast API Toolkit
 
-A collection of Python scripts to interact with the Mimecast API 2.0. This toolkit provides utilities for authentication, account support information, email queue monitoring, and URL decoding.
+A collection of Python scripts to interact with the Mimecast API 2.0. This toolkit provides utilities for authentication, account support information, email queue monitoring, and URL decoding. More on the way.
 
 ## Features
 
@@ -8,6 +8,7 @@ A collection of Python scripts to interact with the Mimecast API 2.0. This toolk
 - **Get Support Info:** Retrieve account support details.
 - **Email Queues:** Monitor inbound and outbound email queues for the last 24 hours.
 - **URL Decode:** Decode Mimecast rewritten URLs (TTP).
+- **More on the way.**
 
 ## Installation
 
@@ -48,7 +49,7 @@ python3 get_email_queues.py
 Decodes a Mimecast rewritten URL. You can provide the URL as an argument or interactively.
 ```bash
 # Argument
-python3 decode_url.py "https://protection.mimecast.com/..."
+python3 decode_url.py "https://url.us.m.mimecastprotect.com/..."
 
 # Interactive
 python3 decode_url.py
