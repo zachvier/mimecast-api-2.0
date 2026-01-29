@@ -8,6 +8,11 @@ BASE_URL = "https://api.services.mimecast.com"
 
 def get_credentials():
     """Reads client_id and client_secret from a text file."""
+    creds = get_config()
+    return creds.get("client_id"), creds.get("client_secret")
+
+def get_config():
+    """Reads all credentials from the text file."""
     creds = {}
     try:
         with open(CREDENTIALS_FILE, "r") as f:
@@ -18,8 +23,7 @@ def get_credentials():
     except FileNotFoundError:
         print(f"Error: {CREDENTIALS_FILE} not found.")
         sys.exit(1)
-    
-    return creds.get("client_id"), creds.get("client_secret")
+    return creds
 
 def get_token():
     """Obtains the Bearer token using credentials from file."""
