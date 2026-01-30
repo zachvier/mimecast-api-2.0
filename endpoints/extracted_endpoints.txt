@@ -4,9 +4,9 @@ PATCH /account/cloud-gateway/v1/emergency-contact
 PUT /account/cloud-gateway/v1/emergency-contact
 
 ## api
-POST /api/account/get-account
-POST /api/account/get-dashboard-notifications
-POST /api/account/get-support-info
+[x] POST /api/account/get-account
+[x] POST /api/account/get-dashboard-notifications
+[x] POST /api/account/get-support-info
 POST /api/archive/get-archive-search-logs
 POST /api/archive/get-file
 POST /api/archive/get-message-detail
@@ -48,7 +48,7 @@ POST /api/domain/get-pending-domain
 POST /api/domain/get-provision-status
 POST /api/domain/get-verification-code
 POST /api/domain/verify-domain
-POST /api/email/get-email-queues
+[x] POST /api/email/get-email-queues
 POST /api/email/send-email
 POST /api/file/file-upload
 POST /api/gateway/find-processing-messages
@@ -91,7 +91,7 @@ POST /api/ttp/remediation/get-incident
 POST /api/ttp/remediation/search-hash
 POST /api/ttp/remediation/v2/create
 POST /api/ttp/url/create-managed-url
-POST /api/ttp/url/decode-url
+[x] POST /api/ttp/url/decode-url
 POST /api/ttp/url/delete-managed-url
 POST /api/ttp/url/get-all-managed-urls
 POST /api/ttp/url/get-logs
