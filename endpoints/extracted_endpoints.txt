@@ -7,7 +7,7 @@ PUT /account/cloud-gateway/v1/emergency-contact
 [x] POST /api/account/get-account
 [x] POST /api/account/get-dashboard-notifications
 [x] POST /api/account/get-support-info
-POST /api/archive/get-archive-search-logs
+[x] POST /api/archive/get-archive-search-logs
 POST /api/archive/get-file
 POST /api/archive/get-message-detail
 POST /api/archive/get-message-list
@@ -192,7 +192,7 @@ POST /email/cloud-integrated/v1/policies
 PUT /email/cloud-gateway/v1/outbound-ip-addresses
 
 ## identity
-GET /identity/whoami
+[x] GET /identity/whoami
 
 ## journaling
 DELETE /journaling/cloud-gateway/v1/services/:journaling_id

@@ -1,83 +1,85 @@
-# Mimecast API Toolkit
+# <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=700&size=35&pause=1000&color=1E90FF&width=800&height=50&lines=Mimecast+API+Toolkit+2.0" alt="Mimecast API Toolkit 2.0" />
 
-A collection of Python scripts to interact with the Mimecast API 2.0. This toolkit provides utilities for authentication, account support information, email queue monitoring, dashboard notifications, account information, and URL decoding. More on the way.
+> [!IMPORTANT]
+> This project is an unofficial toolkit and is **not** affiliated with, maintained, or endorsed by Mimecast.
+
+A collection of Python scripts to interact with the Mimecast API 2.0. This toolkit provides utilities for authentication, account management, email queue monitoring, threat intelligence, and more.
 
 ## Features
 
 - **Centralized Authentication:** OAuth2 token management handled automatically.
-- **Get Support Info:** Retrieve account support details.
-- **Email Queues:** Monitor inbound and outbound email queues for the last 24 hours.
-- **Dashboard Notifications:** Fetch dashboard notifications for a specific account.
-- **Get Account Info:** Retrieve detailed account information.
-- **Get Emergency Contact:** Retrieve account emergency contact details.
-- **URL Decode:** Decode Mimecast rewritten URLs (TTP).
-- **More on the way.**
+- **Account Insights:** Retrieve detailed account info, support details, and emergency contacts.
+- **Monitoring:** Check email queues and dashboard notifications.
+- **Security:** Decode rewritten URLs and fetch archive search logs.
+- **Identity:** Verify partner and account identity information.
 
 ## Installation
 
-1.  Clone the repository:
+1.  **Clone the repository:**
     ```bash
     git clone https://github.com/zachvier/mimecast-api-2.0.git
     cd mimecast-api-2.0
     ```
 
-2.  Install dependencies:
+2.  **Install dependencies:**
     ```bash
     pip3 install -r requirements.txt
     ```
 
-3.  Configure Credentials:
-    Create a `credentials.txt` file in the project root with your Mimecast API Client ID and Secret initially:
+3.  **Configure Credentials:**
+    Create a `credentials.txt` file in the `scripts/` directory (or root, depending on where you run from) with your Mimecast API Client ID and Secret:
     ```text
     client_id=YOUR_CLIENT_ID
     client_secret=YOUR_CLIENT_SECRET
     ```
-    Once configured, you can run `python3 get_account.py` to find your `account_code` in the output. Then, add it to your `credentials.txt`:
+    *Note: `credentials.txt` is git-ignored for security.*
+
+    **Finding your Account Code:**
+    Once configured, run the account script to find your `account_code`:
+    ```bash
+    python3 scripts/get_account.py
+    ```
+    Then, add it to your `credentials.txt`:
     ```text
     client_id=YOUR_CLIENT_ID
     client_secret=YOUR_CLIENT_SECRET
     account_code=YOUR_ACCOUNT_CODE
     ```
-    *Note: `credentials.txt` is git-ignored for security.*
 
 ## Usage
 
-### 1. Get Account Support Info
-Fetches support information for your Mimecast account.
+All scripts are located in the `scripts/` directory. You can run them from the project root using:
+
 ```bash
-python3 get_support_info.py
+python3 scripts/<script_name>.py
 ```
 
-### 2. Get Email Queues
-Fetches inbound and outbound email queue status for the last 24 hours.
-```bash
-python3 get_email_queues.py
-```
+### Available Scripts
 
-### 3. Get Dashboard Notifications
-Fetches dashboard notifications for the configured account code.
-```bash
-python3 get_dashboard_notifications.py
-```
+| Script Name | Description |
+| :--- | :--- |
+| `get_account.py` | Retrieves detailed account information. |
+| `get_dashboard_notifications.py` | Fetches dashboard notifications for the configured account. |
+| `get_email_queues.py` | Monitors inbound and outbound email queues for the last 24 hours. |
+| `get_emergency_contact.py` | Retrieves account emergency contact details. |
+| `get_support_info.py` | Fetches support information for your Mimecast account. |
+| `get_archive_search_logs.py` | Retrieves archive search logs (supports pagination). |
+| `get_whoami.py` | Fetches identity information (whoami). |
+| `decode_url.py` | Decodes Mimecast rewritten URLs (TTP). |
 
-### 4. Get Account Info
-Fetches detailed information about the Mimecast account.
-```bash
-python3 get_account.py
-```
+### Advanced Usage
 
-### 5. Get Emergency Contact
-Fetches emergency contact information for the Mimecast account.
-```bash
-python3 get_emergency_contact.py
-```
+**URL Decode (`decode_url.py`)**
 
-### 6. Decode URL
-Decodes a Mimecast rewritten URL. You can provide the URL as an argument or interactively.
-```bash
-# Argument
-python3 decode_url.py "https://url.us.m.mimecastprotect.com/..."
+This script can be used interactively or with command-line arguments.
 
-# Interactive
-python3 decode_url.py
-```
+*   **Argument Mode:**
+    ```bash
+    python3 scripts/decode_url.py "https://url.us.m.mimecastprotect.com/..."
+    ```
+
+*   **Interactive Mode:**
+    ```bash
+    python3 scripts/decode_url.py
+    # Follow the prompt to paste the URL
+    ```
