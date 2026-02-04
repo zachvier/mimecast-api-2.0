@@ -1,5 +1,5 @@
 ## account
-GET /account/cloud-gateway/v1/emergency-contact
+[x] GET /account/cloud-gateway/v1/emergency-contact
 PATCH /account/cloud-gateway/v1/emergency-contact
 PUT /account/cloud-gateway/v1/emergency-contact
 

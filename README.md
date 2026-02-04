@@ -9,6 +9,7 @@ A collection of Python scripts to interact with the Mimecast API 2.0. This toolk
 - **Email Queues:** Monitor inbound and outbound email queues for the last 24 hours.
 - **Dashboard Notifications:** Fetch dashboard notifications for a specific account.
 - **Get Account Info:** Retrieve detailed account information.
+- **Get Emergency Contact:** Retrieve account emergency contact details.
 - **URL Decode:** Decode Mimecast rewritten URLs (TTP).
 - **More on the way.**
 
@@ -65,7 +66,13 @@ Fetches detailed information about the Mimecast account.
 python3 get_account.py
 ```
 
-### 5. Decode URL
+### 5. Get Emergency Contact
+Fetches emergency contact information for the Mimecast account.
+```bash
+python3 get_emergency_contact.py
+```
+
+### 6. Decode URL
 Decodes a Mimecast rewritten URL. You can provide the URL as an argument or interactively.
 ```bash
 # Argument
